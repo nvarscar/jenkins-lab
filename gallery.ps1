@@ -5,7 +5,7 @@ Param (
 )
 
 
-$webResponse = Invoke-WebRequest -Uri "https://api.imgur.com/3/gallery/search?q=$Search" -Headers @{Authorization = "Client-ID $ClientID"}
+$webResponse = Invoke-WebRequest -Uri "https://api.imgur.com/3/gallery/search?q=$Search" -UseBasicParsing -Headers @{Authorization = "Client-ID $ClientID"}
 $json = $webResponse.Content | ConvertFrom-Json
 
 $images = $json.Data | Select-Object id, title, link
