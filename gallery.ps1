@@ -10,7 +10,7 @@ $json = $webResponse.Content | ConvertFrom-Json
 
 $images = $json.Data | Select-Object id, title, link
 $position = 0
-$imgTemplate = '<blockquote class="imgur-embed-pub" lang="en" data-id="{0}"><a href="{1}">{2}</a></blockquote>'
+$imgTemplate = '<blockquote class="imgur-embed-pub" lang="en" data-id="a/{0}"><a href="{1}">{2}</a></blockquote>'
 $gallery = @()
 $gallery += '<script async src="https://s.imgur.com/min/embed.js" charset="utf-8"></script><table>'
 foreach ($image in $images) {
