@@ -25,5 +25,7 @@ table {
   }
 </style>
 "@
+Write-Host "Generating service page"
 Get-Service | Select-Object Status, Name, DisplayName | ConvertTo-Html -Head $headers | Set-Content .\services.htm
+Write-Host "Generating process page"
 Get-Process | Select-Object Name, TotalProcessorTime, WorkingSet  | ConvertTo-Html -Head $headers | Set-Content .\processes.htm
