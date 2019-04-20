@@ -26,3 +26,4 @@ table {
 </style>
 "@
 Get-Service | Select-Object Status, Name, DisplayName | ConvertTo-Html -Head $headers | Set-Content .\services.htm
+Get-Process | Select-Object Name, TotalProcessorTime, WorkingSet  | ConvertTo-Html -Head $headers | Set-Content .\processes.htm
