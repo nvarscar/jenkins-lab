@@ -1,4 +1,4 @@
-Describe "CatFact2 testds" {
+Describe "CatFact2 tests" {
     Context "Should return a cat fact" {
         Mock -CommandName Invoke-WebRequest -MockWith {
             [pscustomobject]@{
